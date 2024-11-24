@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Interactive Learning Platform for Kids! 🎉</title>
+    <link rel="icon" type="image/avif" href="images/LOGO.avif">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Interactive Learning Platform for Kids! 🎉</h1>
+        <p>Explore, Learn, and Play with Amazing Activities!</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#puzzle-section">Puzzles</a></li>
+            <li><a href="#memory-section">Memory Game</a></li>
+            <li><a href="#art-section">Drawing</a></li>
+            <li><a href="#facts-section">Fun Facts</a></li>
+            <li><a href="#quiz-section">Quiz Time</a></li>
+            <li><a href="#music-section">Music Maker(Guitar & Piano)</a></li>
+            <li><a href="#typing-section">Typing Area</a></li>
+        </ul>
+    </nav>
+
+
+        <!-- Puzzle Section -->
+        <section id="puzzle-section" class="section">
+            <h2>Solve the Puzzle 🧩</h2>
+            <img src="./Images/Puzzzle image.jpg" alt="Puzzle Image" class="activity-image">
+            <div class="container">
+                <h1>Guess the Secret Number!</h1>
+                <p style="color: darkturquoise;">Choose a difficulty level:</p>
+                <select id="difficulty" onchange="startGame()" style="color: rgb(250, 101, 1);">
+                    <option value="50">Easy (1 - 50)</option>
+                    <option value="100" selected>Medium (1 - 100)</option>
+                    <option value="200">Hard (1 - 200)</option>
+                </select>
+                <p style="color: rgb(93, 0, 255);">Can you guess the number?</p>
+                <input type="number" id="guessInput" placeholder="Enter number">
+                <button onclick="checkGuess()">Submit Guess</button>
+                <div class="result" id="result"></div>
+                <div class="previous-guesses" id="previousGuesses"></div>
+                <div class="hint" id="hint"></div>
+            </div>
+        </section>
+
+    <!-- Memory Game Section -->
+    <section id="memory-section" class="section">
+        <h2>Memory Game 🧠</h2>
+        <img src="./Images/Memory Game image.jpg" alt="Memory Game Image" class="activity-image">
+        <p style="font-size: larger;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgb(3, 86, 59);">"Click on a card to reveal its Picture"</p>
+        <div id="memory-game" class="card-grid"></div>
+    </section>
+
+
+
+        <!-- Drawing Section -->
+        <section id="art-section" class="section">
+            <h2>Create Your Masterpiece 🎨</h2>
+            <img src="./Images/Create your Masterpiece.jpg" alt="Art Image" class="activity-image">
+            <canvas id="art-canvas" width="800" height="400"></canvas>
+            <div>
+                <label for="color-picker">Choose a Color:</label>
+                <input type="color" id="color-picker" value="#000000">
+                <label for="pen-thickness">Thickness:</label>
+                <input type="range" id="pen-thickness" min="1" max="20" value="5">
+                <button id="eraser-tool">Eraser</button>
+                <button id="clear-screen">Clear Screen</button>
+            </div>
+
+        </section>
+
+
+
+    <!-- Fun Facts Section -->
+    <section id="facts-section" class="section">
+        <h2>Discover Fun Facts 🌍</h2>
+        <img src="./Images/Fun-Facts-for-Kids.webp" alt="Fun Facts Image" class="activity-image">
+        <button id="reveal-fact">Click to Reveal a Fun Fact</button>
+        <p id="fun-fact" style="font-size: larger;color: blueviolet; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"></p>
+    </section>
+
+
+
+
+    <!-- Quiz Section -->
+    <section id="quiz-section" class="section">
+        <h2>Quiz Time! 🤓</h2>
+        <img src="./Images/Quiz time Image.webp" alt="Quiz Image" class="activity-image">
+        <p id="quiz-question"></p>
+        <div id="quiz-container">
+            <div id="quiz-question"></div>
+            <div id="quiz-options">
+                <button class="quiz-option" onclick="checkAnswer(0)"></button>
+                <button class="quiz-option" onclick="checkAnswer(1)"></button>
+                <button class="quiz-option" onclick="checkAnswer(2)"></button>
+                <button class="quiz-option" onclick="checkAnswer(3)"></button>
+            </div>
+            <div id="quiz-result"></div>
+            <button id="submit-btn" onclick="submitQuiz()">Submit</button>
+        </div>
+        <p id="quiz-result"></p>
+    </section>
+
+
+
+
+    <!-- Music Maker Section -->
+    <section id="music-section" class="section">
+        <h2>🎶 Music Maker(Guitar)🎸</h2>
+        <img src="./Images/Music Maker Image(Guitar).avif" alt="Music Maker Image(Guitar)" class="activity-image">
+        <p style="color: rgb(10, 10, 238); font-size: larger;;">Click a key to play a Guitar sound!</p>
+        <div class="music-container">
+            <div class="music-key" data-note="A">A</div>
+            <div class="music-key" data-note="Asharp">A#</div>
+            <div class="music-key" data-note="B">B</div>
+            <div class="music-key" data-note="C">C</div>
+            <div class="music-key" data-note="Csharp">C#</div>
+            <div class="music-key" data-note="D">D</div>
+            <div class="music-key" data-note="Dsharp">D#</div>
+            <div class="music-key" data-note="E">E</div>
+            <div class="music-key" data-note="F">F</div>
+            <div class="music-key" data-note="Fsharp">F#</div>
+            <div class="music-key" data-note="G">G</div>
+            <div class="music-key" data-note="Gsharp">G#</div>
+        </div>
+    </section>
+
+    <section id="music-section" class="section">
+        <h2>🎶 Music Maker(Piano)🎹 </h2>
+        <img src="./Images/Music Maker Image(Piano)2.jpg" alt="Music Maker Image(Piano)" class="activity-image">
+        <p style="color: rgb(98, 0, 255); font-size: larger;;">Click a key to play a Piano sound!</p>
+        <div class="music-container">
+            <div class="music-key" data-note="c">C</div>
+            <div class="music-key" data-note="csharp">C#</div>
+            <div class="music-key" data-note="d">D</div>
+            <div class="music-key" data-note="dsharp">D#</div>
+            <div class="music-key" data-note="e">E</div>
+            <div class="music-key" data-note="f">F</div>
+            <div class="music-key" data-note="fsharp">F#</div>
+            <div class="music-key" data-note="g">G</div>
+            <div class="music-key" data-note="gsharp">G#</div>
+            <div class="music-key" data-note="a">A</div>
+            <div class="music-key" data-note="asharp">A#</div>
+            <div class="music-key" data-note="b">B</div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Typing Section -->
+    <section id="typing-section" class="section">
+        <h2>Typing Area 🖊️</h2>
+        <img src="./Images/Typing Image.avif" alt="Typing Illustration" class="activity-image">
+        <p id="display-paragraph">"Once upon a time, there was a little fox named Max. Max loved to run and jump in the green forest. Every day, he would play with his friends, the birds and squirrels. They would race around the big trees, and Max would always win. He was very fast! At the end of the day, Max would rest under a tall tree, feeling happy and tired."</p>
+        <textarea id="typing-area" rows="5" cols="50" placeholder="Type the paragraph here..."></textarea>
+        <div class="buttons">
+          <button id="submit-text">Submit</button>
+          <button id="clear-screen-Typing">Clear</button>
+        </div>
+        <div id="result-section" class="hidden">
+          <h3>Results</h3>
+          <p id="feedback"></p>
+          <p>Your Score: <span id="score">0</span></p>
+        </div>
+      </section>
+
+    <footer>
+        <p>&copy; 2024 Interactive Learning Platform for Kids!. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

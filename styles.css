@@ -1,0 +1,343 @@
+General Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fdf6e3;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: linear-gradient(45deg, #1e90ff, #ff69b4);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+/* Navigation */
+nav {
+  background: #ffa389;
+  color: white;
+  padding: 10px 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ff69b4;
+}
+
+/* Sections */
+.section { 
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 90%;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.section h2 {
+  margin-bottom: 10px;
+}
+
+/* Activity Images */
+.activity-image {
+  width: 100%;
+  max-width: 600px;
+  margin: 15px 0;
+  border-radius: 8px;
+}
+
+/* Canvas for Drawing */
+#art-canvas {
+  border: 2px solid #333;
+  margin: 10px auto;
+  display: block;
+}
+
+/* Buttons */
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  background: #1e90ff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #ff69b4;
+}
+
+/* Music Keys */
+.music-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.music-key {
+  width: 60px;
+  height: 200px;
+  background: linear-gradient(to bottom, #444, #666);
+  border: 2px solid #000;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.1s, background 0.2s;
+}
+
+.music-key:active {
+  background: #888;
+  transform: scale(0.95);
+}
+
+
+/* Footer */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 20px;
+}
+
+
+
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background-color: #fd6bde;
+  color: white;
+  text-align: center;
+  line-height: 100px;
+  font-size: 2.5rem;
+  height: 100px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+
+
+/* Typing Section */
+#typing-section textarea {
+  width: 80%;
+  margin: 10px auto;
+  display: block;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+button#submit-text {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+button#clear-screen-Typing {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.hidden {
+  display: none;
+}
+
+#result-section {
+  margin-top: 20px;
+}
+
+#feedback {
+  color: #f44336;
+  font-weight: bold;
+}
+
+
+
+/* Quiz Section */ 
+/* Quiz Time */
+
+/* Styling for the quiz container */
+#quiz-container {
+  margin: 20px auto;
+  padding: 20px;
+  width: 50%;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Styling for the question text */
+#quiz-question {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Styling for the option buttons */
+.quiz-option {
+  display: block;
+  margin: 10px auto;
+  padding: 12px 20px;
+  width: 80%;
+  font-size: 1rem;
+  color: #333;
+  background-color: #eaeaea;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover effect for option buttons */
+.quiz-option:hover {
+  background-color: #d6d6d6;
+}
+
+/* Styling for the result text */
+#quiz-result {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Styling for the submit button */
+#submit-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none; /* Hidden by default, shown after all questions are answered */
+  transition: background-color 0.3s;
+}
+
+/* Hover effect for the submit button */
+#submit-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive design: Adjust container width for smaller screens */
+@media (max-width: 768px) {
+  #quiz-container {
+      width: 90%;
+  }
+
+  .quiz-option {
+      width: 100%;
+  }
+}
+
+
+
+
+/* Puzzle Section */
+#puzzle-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+/* Container for game content */
+.container {
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 300px;
+}
+
+/* Style for input fields */
+input[type="number"] {
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 10px;
+  width: 80px;
+}
+
+/* Result message styling */
+.result {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Previous guesses */
+.previous-guesses {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Hint */
+.hint {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ff8c00;
+}
+
+
+/* Fun-Facts */
+#facts-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+
